@@ -1,1 +1,1 @@
-# magic_POM
+# magic_POM - pattern Page-Object Model (POM)
