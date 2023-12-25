@@ -1,7 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from time import sleep
 
 
 def test_with_positive_values(driver, random_string_10_chars):
@@ -30,7 +29,9 @@ def test_with_positive_values(driver, random_string_10_chars):
 
     success_txt = (
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(
-            (By.XPATH, "//*/div[.='Thank you for registering with Main Website Store.']")))
+            (By.XPATH, "//*/div[.='Thank you for registering with Main Website Store.']")
+            )
+        )
     )
 
     assert success_txt.text == 'Thank you for registering with Main Website Store.'
